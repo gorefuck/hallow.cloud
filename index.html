@@ -4,14 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hallow</title>
-
+<link rel="icon" type="image/png" href="favicon.png">
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 body{
     background:#0b0b0f;
     color:#d4d4d4;
@@ -19,9 +18,7 @@ body{
     font-size:13px;
     min-height:100vh;
 }
-
 /* Clock */
-
 #clock{
     position:fixed;
     top:10px;
@@ -32,33 +29,26 @@ body{
     font-family:Consolas, monospace;
     z-index:100;
 }
-
 /* Left Content */
-
 .left{
     width:320px;
     margin-left:20px;
     margin-top:50px;
 }
-
 /* Spotify pinned far right */
-
 .spotify-area{
     position:fixed;
     top:45px;
     right:10px;
     width:400px;
 }
-
 /* Boxes */
-
 .box{
     background:#121212;
     border:1px solid #363636;
     padding:10px;
     margin-bottom:10px;
 }
-
 h1{
     font-size:26px;
     font-weight:normal;
@@ -66,14 +56,12 @@ h1{
     margin-top:10px;
     margin-bottom:5px;
 }
-
 h2{
     font-size:15px;
     font-weight:normal;
     color:white;
     margin-bottom:8px;
 }
-
 img{
     width:100px;
     height:100px;
@@ -81,30 +69,135 @@ img{
     border:1px solid #555;
     display:block;
 }
-
 a{
     color:#9cb7ff;
     text-decoration:none;
 }
-
 a:hover{
     text-decoration:underline;
 }
-
 iframe{
     width:100%;
     height:500px;
     border:1px solid #333;
 }
-
 .subtitle{
     color:#999;
 }
 
+/* Name + site icon */
+.name-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+.site-icon{
+    width:20px;
+    height:20px;
+    border-radius:4px;
+    object-fit:cover;
+    border:1px solid #555;
+    flex-shrink:0;
+}
+
+/* Dropdown sections (Socials / Contact) */
+.dropdown{
+    background:#121212;
+    border:1px solid #363636;
+    margin-bottom:10px;
+    overflow:hidden;
+}
+.dropdown-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px;
+    cursor:pointer;
+    user-select:none;
+    color:#9cb7ff;
+    letter-spacing:0.5px;
+}
+.dropdown-header:hover{
+    background:#161616;
+}
+.dropdown-header .chevron{
+    color:#9cb7ff;
+    transition:transform 0.2s ease;
+    font-family:Consolas, monospace;
+}
+.dropdown.open .chevron{
+    transform:rotate(180deg);
+}
+.dropdown-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.25s ease;
+}
+.dropdown.open .dropdown-body{
+    max-height:400px;
+}
+.dropdown-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:10px;
+    border-top:1px solid #232323;
+    color:#d4d4d4;
+}
+.dropdown-item:hover{
+    background:#161616;
+}
+.dropdown-item a{
+    color:#d4d4d4;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    width:100%;
+}
+.dropdown-item a:hover{
+    text-decoration:none;
+    color:#9cb7ff;
+}
+.dropdown-item .icon{
+    width:16px;
+    height:16px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.dropdown-item .icon svg{
+    width:16px;
+    height:16px;
+    fill:currentColor;
+}
+.dropdown-item .label-sub{
+    color:#888;
+    font-size:11px;
+}
+
+/* View counter, bottom right */
+#view-counter{
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    background:#111;
+    border:1px solid #333;
+    padding:6px 10px;
+    font-family:Consolas, monospace;
+    color:#999;
+    z-index:100;
+}
+#view-counter img{
+    width:auto;
+    height:14px;
+    border:none;
+    display:inline;
+    vertical-align:middle;
+}
+
 /* Mobile */
-
 @media(max-width:900px){
-
     .spotify-area{
         position:relative;
         width:auto;
@@ -112,127 +205,173 @@ iframe{
         right:auto;
         margin:20px;
     }
-
     .left{
         width:auto;
         margin:50px 20px 20px 20px;
     }
-
+    #view-counter{
+        position:relative;
+        bottom:auto;
+        right:auto;
+        margin:20px;
+        width:fit-content;
+    }
 }
 </style>
 </head>
 <body>
-
 <div id="clock">00:00:00 GMT</div>
-
 <!-- LEFT SIDE -->
-
 <div class="left">
-
     <div class="box">
-
         <img src="profile.png">
-
         <h1>Hallow</h1>
-
         <div class="subtitle">
             he/they • Web Developer • UK
         </div>
-
     </div>
-
     <div class="box">
-
         <h2>About Me</h2>
-
         <p>
             Hate is baggage, life's too short to be pissed off all the time. It's just not worth it.
         </p>
-
         <br>
-
         <p>
             My room is my favourite place in the world and where I spend
             most of my time. I enjoy fantasy worlds, history, coding,
             and getting lost in films and games.
         </p>
-
     </div>
-
     <div class="box">
-
         <h2>Favourite Films/Series</h2>
-
         <p>
             Star Wars
             <br><br>
-
             Dexter
             <br><br>
-
             Fight Club
             <br><br>
-
             The Walking Dead
         </p>
-
     </div>
 
-    <div class="box">
-
-        <h2>Links</h2>
-
-        <a href="https://hitler.cc/" target="_blank">
-            Historical Archive Site TTRA
-        </a>
-
-        <br><br>
-        
-<a href="https://discord.gg/KP6A9xUQpm" target="_blank">
-            Wallahi Friends Discord ( wlhi )
-        </a>
-
+    <!-- SOCIALS dropdown -->
+    <div class="dropdown" id="socials-dropdown">
+        <div class="dropdown-header" onclick="toggleDropdown('socials-dropdown')">
+            <span>SOCIALS</span>
+            <span class="chevron">V</span>
+        </div>
+        <div class="dropdown-body">
+            <div class="dropdown-item">
+                <a href="https://github.com/hallow35" target="_blank" rel="noopener noreferrer">
+                    <span class="icon">
+                        <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    </span>
+                    <span>GitHub</span>
+                </a>
+            </div>
+            <div class="dropdown-item">
+                <a href="https://open.spotify.com/user/31mf24d6tezrz57jrn57ogv4uguq?si=e2d44f1c35414f3a" target="_blank" rel="noopener noreferrer">
+                    <span class="icon">
+                        <svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.67 11.55a.5.5 0 0 1-.69.16c-1.89-1.15-4.27-1.41-7.07-.77a.5.5 0 1 1-.22-.98c3.06-.7 5.7-.4 7.82.89.24.15.31.46.16.7zm.98-2.18a.62.62 0 0 1-.86.2c-2.16-1.33-5.46-1.72-8.02-.94a.62.62 0 1 1-.36-1.19c2.92-.89 6.55-.46 9.04 1.07.29.18.38.57.2.86zm.09-2.27C10.4 5.65 6.13 5.5 3.6 6.28a.75.75 0 1 1-.44-1.43c2.9-.88 7.63-.71 10.65 1.1a.75.75 0 1 1-.77 1.29z"/></svg>
+                    </span>
+                    <span>Spotify</span>
+                </a>
+            </div>
+            <div class="dropdown-item">
+                <a href="https://www.roblox.com/users/3683726904/profile" target="_blank" rel="noopener noreferrer">
+                    <span class="icon">
+                        <svg viewBox="0 0 16 16"><path d="M3.06 0L0 12.94 12.94 16 16 3.06 3.06 0zM6.6 6.42l2.98.78-.78 2.98-2.98-.78.78-2.98z"/></svg>
+                    </span>
+                    <span>Roblox</span>
+                </a>
+            </div>
+        </div>
     </div>
 
+    <!-- CONTACT dropdown -->
+    <div class="dropdown" id="contact-dropdown">
+        <div class="dropdown-header" onclick="toggleDropdown('contact-dropdown')">
+            <span>CONTACT</span>
+            <span class="chevron">V</span>
+        </div>
+        <div class="dropdown-body">
+            <div class="dropdown-item">
+                <a href="mailto:email@placeholder.com">
+                    <span class="icon">
+                        <svg viewBox="0 0 16 16"><path d="M1 3h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm0 1.5V5l7 4 7-4v-.5H1zm0 2.1V12h14V6.6L8 10.5 1 6.6z"/></svg>
+                    </span>
+                    <span>
+                        Email
+                        <br>
+                        <span class="label-sub">vibecodeboss@gmail.com</span>
+                    </span>
+                </a>
+            </div>
+            <div class="dropdown-item">
+                <span class="icon">
+                    <svg viewBox="0 0 16 16"><path d="M13.5 2.6a13.6 13.6 0 0 0-3.36-1.04.05.05 0 0 0-.06.03c-.14.26-.31.6-.42.87a12.6 12.6 0 0 0-3.72 0 8.8 8.8 0 0 0-.43-.87.05.05 0 0 0-.06-.03c-1.16.24-2.28.58-3.36 1.04a.05.05 0 0 0-.02.02C.4 6.05-.24 9.4.08 12.7a.06.06 0 0 0 .02.04 13.7 13.7 0 0 0 4.09 2.05.05.05 0 0 0 .06-.02c.32-.43.6-.89.84-1.37a.05.05 0 0 0-.03-.07c-.45-.17-.87-.37-1.28-.61a.05.05 0 0 1 0-.08c.09-.06.17-.13.26-.2a.05.05 0 0 1 .05 0c2.68 1.22 5.58 1.22 8.23 0a.05.05 0 0 1 .05 0c.09.07.17.14.26.2a.05.05 0 0 1 0 .08c-.41.24-.83.44-1.28.6a.05.05 0 0 0-.03.08c.25.48.53.94.84 1.37a.05.05 0 0 0 .06.02 13.6 13.6 0 0 0 4.1-2.05.05.05 0 0 0 .02-.04c.38-3.8-.63-7.12-2.68-10.06a.04.04 0 0 0-.02-.02zM5.35 10.6c-.8 0-1.46-.74-1.46-1.64 0-.9.65-1.64 1.46-1.64.82 0 1.47.75 1.46 1.64 0 .9-.64 1.64-1.46 1.64zm5.3 0c-.8 0-1.46-.74-1.46-1.64 0-.9.65-1.64 1.46-1.64.82 0 1.47.75 1.46 1.64 0 .9-.64 1.64-1.46 1.64z"/></svg>
+                </span>
+                <span>
+                    Discord
+                    <br>
+                    <span class="label-sub">c0wpoh</span>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- LINKS dropdown -->
+    <div class="dropdown" id="links-dropdown">
+        <div class="dropdown-header" onclick="toggleDropdown('links-dropdown')">
+            <span>LINKS</span>
+            <span class="chevron">V</span>
+        </div>
+        <div class="dropdown-body">
+            <div class="dropdown-item">
+                <a href="https://discord.gg/KP6A9xUQpm" target="_blank" rel="noopener noreferrer">
+                    <span>Wallahi Friends Discord ( wlhi )</span>
+                </a>
+            </div>
+            <div class="dropdown-item">
+                <a href="https://hitler.cc" target="_blank" rel="noopener noreferrer">
+                    <span>The Third Reich Archive</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
-
 <!-- FAR RIGHT SPOTIFY -->
-
 <div class="spotify-area">
-
     <div class="box">
-
         <h2>Spotify</h2>
-
         <iframe
             src="https://open.spotify.com/embed/playlist/0nBQ4QtxDjEi7zUc6FNkf8?utm_source=generator&theme=0"
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy">
         </iframe>
-
     </div>
+</div>
 
+<div id="view-counter">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=hallow.site.views" alt="views">
 </div>
 
 <script>
-
 function updateClock(){
-
     const now = new Date();
-
     document.getElementById("clock").textContent =
         now.toLocaleTimeString("en-GB",{
             timeZone:"Europe/London",
             hour12:false
         }) + " GMT";
-
 }
-
 updateClock();
-
 setInterval(updateClock,1000);
 
+function toggleDropdown(id){
+    document.getElementById(id).classList.toggle("open");
+}
 </script>
-
 </body>
 </html>
