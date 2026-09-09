@@ -208,33 +208,6 @@ iframe{
     vertical-align:middle;
 }
 
-/* Swinging baby image */
-.swing-wrap{
-    display:flex;
-    justify-content:center;
-    padding:20px 0 10px 0;
-    perspective:600px;
-}
-#baby-swing{
-    width:110px;
-    height:110px;
-    border:1px solid #555;
-    border-radius:6px;
-    object-fit:cover;
-    transform-origin:top center;
-    animation:swing 2.4s ease-in-out infinite;
-}
-@keyframes swing{
-    0%{ transform:rotate(-18deg); }
-    50%{ transform:rotate(18deg); }
-    100%{ transform:rotate(-18deg); }
-}
-@media (prefers-reduced-motion: reduce){
-    #baby-swing{
-        animation:none;
-    }
-}
-
 /* Mobile */
 @media(max-width:900px){
     .spotify-area{
@@ -269,12 +242,6 @@ iframe{
             he/they • Web Developer • UK
         </div>
     </div>
-
-    <!-- Swinging baby.png -->
-    <div class="swing-wrap">
-        <img id="baby-swing" src="baby.png" alt="">
-    </div>
-
     <div class="box">
         <h2>About Me</h2>
         <p>
@@ -388,6 +355,11 @@ iframe{
             <div class="dropdown-item">
                 <a href="https://discord.gg/KP6A9xUQpm" target="_blank" rel="noopener noreferrer">
                     <span>Wallahi Friends Discord ( wlhi )</span>
+                </a>
+            </div>
+            <div class="dropdown-item">
+                <a href="https://hitler.cc" target="_blank" rel="noopener noreferrer">
+                    <span>The Third Reich Archive</span>
                 </a>
             </div>
         </div>
