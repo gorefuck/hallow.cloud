@@ -42,6 +42,27 @@ body{
     right:10px;
     width:400px;
 }
+/* Swinging baby, centre of page */
+.swing-area{
+    position:fixed;
+    top:45px;
+    left:50%;
+    transform:translateX(-50%);
+    width:450px;
+    text-align:center;
+}
+.swing-area img.swing{
+    width:350px;
+    height:auto;
+    margin:0 auto;
+    border:none;
+    transform-origin:top center;
+    animation:swing 2s ease-in-out infinite alternate;
+}
+@keyframes swing{
+    from{ transform:rotate(-20deg); }
+    to{ transform:rotate(20deg); }
+}
 /* Boxes */
 .box{
     background:#121212;
@@ -217,6 +238,13 @@ iframe{
         right:auto;
         margin:20px;
     }
+    .swing-area{
+        position:relative;
+        top:auto;
+        left:auto;
+        transform:none;
+        margin:20px auto;
+    }
     .left{
         width:auto;
         margin:50px 20px 20px 20px;
@@ -252,6 +280,18 @@ iframe{
             My room is my favourite place in the world and where I spend
             most of my time. I enjoy fantasy worlds, history, coding,
             and getting lost in films and games.
+        </p>
+        <br>
+        <p>
+            In the future I want to be a philosopher of some kind. I love
+            watching movies, playing video games, and talking to my wife.
+            I also love collecting old accounts and accounts with short usernames.
+        </p>
+        <br>
+        <p>
+            When I get passionate about something, I really get into it.
+            I know basic JavaScript and HTML, and I love playing games like
+            Minecraft, Nubby's Number Factory and Bloons TD6.
         </p>
     </div>
     <div class="box">
@@ -365,6 +405,12 @@ iframe{
         </div>
     </div>
 </div>
+
+<!-- MIDDLE SWINGING IMAGE -->
+<div class="swing-area">
+    <img class="swing" src="baby.png" alt="baby">
+</div>
+
 <!-- FAR RIGHT SPOTIFY -->
 <div class="spotify-area">
     <div class="box">
